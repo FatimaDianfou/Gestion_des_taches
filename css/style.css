@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #111;
+    padding-top: 20px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#main.active {
+    margin-left: 250px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taskList button {
+    margin-left: 10px;
+}

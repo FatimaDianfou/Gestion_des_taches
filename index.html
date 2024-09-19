@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de gestion de tâches avec connexion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>Dashboard</h2>
+        <a href="#" onclick="showSection('tasks')">Gestion des tâches</a>
+        <a href="#" onclick="logout()">Déconnexion</a>
+    </div>
+
+    <!-- Contenu principal -->
+    <div id="main" class="main-content">
+        <button class="btn btn-primary mb-3" onclick="toggleSidebar()">☰ Menu</button>
+
+        <!-- Section Connexion -->
+        <div id="loginSection" class="section active-section">
+            <h1>Connexion</h1>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Connexion</button>
+            </form>
+            <p>Pas encore de compte ? <a href="#" onclick="showSection('registerSection')">Créer un compte</a></p>
+        </div>
+
+        <!-- Section Inscription -->
+        <div id="registerSection" class="section">
+            <h1>Créer un compte</h1>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="registerUsername" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="registerUsername" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+            <p>Déjà un compte ? <a href="#" onclick="showSection('loginSection')">Se connecter</a></p>
+        </div>
+
+        <!-- Section Gestion des tâches -->
+        <div id="tasks" class="section">
+            <h1>Gestion des tâches</h1>
+            <form id="taskForm">
+                <div class="mb-3">
+                    <label for="taskTitle" class="form-label">Titre de la tâche</label>
+                    <input type="text" class="form-control" id="taskTitle" placeholder="Entrez le titre de la tâche" required>
+                </div>
+                <div class="mb-3">
+                    <label for="taskDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="taskDescription" placeholder="Entrez la description" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
+            </form>
+            <ul id="taskList" class="list-group my-4"></ul>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
